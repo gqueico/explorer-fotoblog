@@ -38,7 +38,7 @@ body {
 }
 
 .container {
-  width: min(127.6rem, 100%);
+  width: min(127.8rem, 100%);
   margin: 0 auto;
   padding: 1.6rem 3.2rem;
 }
@@ -121,7 +121,7 @@ main h1 {
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(39rem, 1fr));
   gap: 2.2rem;
   margin: 3.6rem 0 6.4rem;
 }
@@ -133,15 +133,24 @@ main h1 {
 }
 
 .item img {
+  display: block;
   width: 100%;
   aspect-ratio: 16/9;
   object-fit: cover;
+  transition: all 200ms ease-out;
+}
+
+.item img:hover {
+  filter: hue-rotate(7deg) contrast(101%) saturate(200%);
+  transform: scale(1.1) rotate(-2deg);
 }
 
 .details {
-  margin-top: -.4rem;
   padding: 2.2rem;
   color: var(--color-base-gray-900);
+  background-color: var(--color-base-white);
+  position: relative;
+  z-index: 1;
 }
 
 .details h2 {
