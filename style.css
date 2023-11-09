@@ -51,6 +51,10 @@ nav ul {
   column-gap: 7.5rem;
 }
 
+header {
+  animation: move .2s;
+}
+
 nav ul li {
   list-style: none;
 }
@@ -168,4 +172,10 @@ main h1 {
   text-transform: uppercase;
   border-radius: .4rem;
   background-color: var(--color-base-gray-100);
+}
+
+@keyframes move {
+  from {
+    transform: translateY(-100%);
+  }
 }
